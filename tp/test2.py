@@ -35,18 +35,3 @@ for persona in data:
 
 print(f"Hombres: {hombres}")
 print(f"Mujeres: {mujeres}")
-
-
-def add_uni(data):
-    for info in data:
-        if not info.get("NIVEL_ED") :
-            continue # SI NO ENCUENTRA EN UN ELEMENTO DE LA LISTA EL ATRIBUTO NIVEL_ED CONTINUA BUSCANDO
-    if info["NIVEL_ED"] <= 3 and info["NIVEL_ED"] >= 7:
-        univ = 2
-    elif info["NIVEL_ED"] > 3 and info["NIVEL_ED"] <= 5 :
-        univ = 0
-    elif info["NIVEL_ED"] == 6:
-        univ = 1
-    info["UNIVERSITARIO"] = univ
-
-add_uni(data)
