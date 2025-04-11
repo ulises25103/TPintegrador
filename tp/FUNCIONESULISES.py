@@ -1,12 +1,11 @@
-import os
+from pathlib import Path
 
-path = "data/usu_individual_T324.txt"
+path = Path('usu_individual_T324.txt') 
 
 with open (path, "r") as fp:
     text = fp.read()
 
 headers = [x.strip('"') for x in text.split("\n")[0].split(";")]
-
 
 print(headers)
 
@@ -21,17 +20,18 @@ for line in text_line:
     for key,value in enumerate(line_split): # me devuelve a lista con cada elemento con su indice.
         value = value.strip('"') # me elimina las ""
         line_data[headers[key]] = value # me rellena el diccionario de manera que quede como key el header y el valor el value.
-    data.append(line_data) # me rellena la lista de diccionarios, por cada linea en text, me genera un diccionario con su respectiva key y valor.
+    data.append(line_data) #
 
-hombres = 0
-mujeres = 0
+def add_uni(data):
+    for info in data:
+        if not info.get("NIVEL_ED") :
+            continue # SI NO ENCUENTRA EN UN ELEMENTO DE LA LISTA EL ATRIBUTO NIVEL_ED CONTINUA BUSCANDO
+    if info["NIVEL_ED"] <= 3 and info["NIVEL_ED"] >= 7:
+        univ = 2
+    elif info["NIVEL_ED"] > 3 and info["NIVEL_ED"] <= 5 :
+        univ = 0
+    elif info["NIVEL_ED"] == 6:
+        univ = 1
+    info["UNIVERSITARIO"] = univ
 
-for persona in data:
-    sexo = persona.get("CH04")  # puede ser '1', '2', o estar ausente
-    if sexo == '1':
-        hombres += 1
-    elif sexo == '2':
-        mujeres += 1
-
-print(f"Hombres: {hombres}")
-print(f"Mujeres: {mujeres}")
+add_uni(data)
