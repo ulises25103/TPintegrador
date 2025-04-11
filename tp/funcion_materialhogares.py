@@ -1,6 +1,6 @@
 from pathlib  import Path
 import csv
-file = Path('tp')/'data'/'usu_hogar_T324.txt'
+file = Path('tp')/'data'/'usu_hogar_T216.txt'
 MATERIAL_TECHUMBRE = ''
 material_durable = ['1','2','3','4']
 material_precario = ['5','6','7']
