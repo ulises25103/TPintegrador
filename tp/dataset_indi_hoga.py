@@ -2,7 +2,6 @@ import os
 import zipfile
 from pathlib import Path
 import csv
-list(Path.cwd().iterdir())
 
 def dataset_individuals(zip_folder):
     all_individuals = []
@@ -19,7 +18,7 @@ def dataset_individuals(zip_folder):
     return all_individuals
 
 def dataset_hogares(zip_folder):
-    all_hogares =[]
+    all_hogares = []
     for file in os.listdir(zip_folder):
         if file.endswith(".zip"):
             zip_path = zip_folder / file
