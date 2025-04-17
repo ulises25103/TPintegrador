@@ -1,4 +1,7 @@
 from pathlib  import Path
+#import mi_test
+#folder = Path('tp')/'data_zip'
+#list_disc_indi = mi_test.dataset_individuals(folder)
 import csv
 file = Path('tp')/'data'/'usu_individual_T216.txt'
 CH04_str= ''
@@ -13,7 +16,7 @@ for i,dict in enumerate(list_disc_indi):
             list_disc_indi[i]['CH04_str'] = 'Masculino'
     else:
         list_disc_indi[i]['CH04_str'] = 'Femenino'
-    print(list_disc_indi[i]['CH04_str'])
+
 
 
     
