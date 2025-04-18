@@ -1,6 +1,5 @@
 from dataset_indi_hoga import dataset_individuals as data_indi
 from pathlib import Path
-import json
 
 zip_folder = Path('data_zip')
 
